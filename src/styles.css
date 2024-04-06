@@ -5,3 +5,23 @@
 body {
   background-color: #f3f4f6;
 }
+
+/* Hide default scrollbar styles */
+body::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar track */
+  height: 5px; /* Height of the scrollbar thumb */
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the scrollbar track */
+  border-radius: 0px; /* Remove default border radius */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #a7a7a7; /* Color of the scrollbar thumb */
+  border-radius: 0px; /* Add border radius to the thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #888888; /* Change thumb color on hover */
+}
