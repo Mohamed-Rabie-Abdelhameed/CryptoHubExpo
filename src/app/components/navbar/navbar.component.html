@@ -1,0 +1,124 @@
+<nav>
+  <div
+    class="flex flex-wrap items-center justify-between mx-auto md:px-12 px-2 py-4 bg-dark"
+  >
+    <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <img
+        src="assets/images/logo.svg"
+        class="hidden md:block h-10 md:h-12"
+        alt="CryptoCoExpo Logo"
+      />
+      <h1 class="font-display md:text-xl text-light">CryptoCoExpo</h1>
+    </a>
+    <button
+      (click)="toggleMenu()"
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="inline-flex items-center p-1 w-10 h-10 justify-center text-sm text-dark rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-400 transition duration-300 ease-in-out"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      @if (isMenuCollapsed) {
+      <svg
+        class="text-light w-4 h-4"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 17 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"
+        />
+      </svg>
+      }@else{
+      <svg
+        class="text-light w-4 h-4"
+        xmlns="http://www.w3.org/2000/svg"
+        version="1.1"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="512"
+        height="512"
+        x="0"
+        y="0"
+        viewBox="0 0 512 512"
+        style="enable-background: new 0 0 512 512"
+        xml:space="preserve"
+      >
+        <g>
+          <g data-name="02 User">
+            <path
+              d="M25 512a25 25 0 0 1-17.68-42.68l462-462a25 25 0 0 1 35.36 35.36l-462 462A24.93 24.93 0 0 1 25 512z"
+              fill="currentColor"
+              opacity="1"
+              data-original="#000000"
+              class=""
+            ></path>
+            <path
+              d="M487 512a24.93 24.93 0 0 1-17.68-7.32l-462-462A25 25 0 0 1 42.68 7.32l462 462A25 25 0 0 1 487 512z"
+              fill="currentColor"
+              opacity="1"
+              data-original="#000000"
+              class=""
+            ></path>
+          </g>
+        </g>
+      </svg>
+      }
+    </button>
+    <div
+      class="hidden w-full md:block md:w-auto"
+      id="navbar-default"
+      [ngClass]="{ hidden: isMenuCollapsed, block: !isMenuCollapsed }"
+    >
+      <ul
+        class="text-light flex flex-col md:items-center mt-2 md:m-0 p-2 md:p-0 border border-gray-400 rounded-lg md:flex-row md:space-x-6 rtl:space-x-reverse md:border-0"
+      >
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="toggleMenu()"
+            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out"
+            aria-current="page"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/menu"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out"
+            >Topics</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/about"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out"
+          >
+            Speakers
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/contact"
+            routerLinkActive="active"
+            (click)="toggleMenu()"
+            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out"
+          >
+            Sponsors
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
