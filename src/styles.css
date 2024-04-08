@@ -8,7 +8,7 @@ body {
 
 /* Hide default scrollbar styles */
 body::-webkit-scrollbar {
-  width: 8px; /* Width of the scrollbar track */
+  width: 5px; /* Width of the scrollbar track */
   height: 5px; /* Height of the scrollbar thumb */
 }
 

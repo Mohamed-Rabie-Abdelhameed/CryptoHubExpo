@@ -1,55 +1,67 @@
 import { Component } from '@angular/core';
 import { CountdownComponent } from '../countdown/countdown.component';
+import { CarouselComponent } from '../carousel/carousel.component';
+import AOS from 'aos';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CountdownComponent],
+  imports: [CountdownComponent, CarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-   sponsors = [
+  constructor() {
+    AOS.init({
+      offset: -50,
+      once: true,
+    });
+  }
+
+  speakers = [
     {
-      name: 'a16zCryptoResearch',
-      image: 'assets/images/sponsors/a16zCryptoResearch.png',
-      website: 'https://a16zcrypto.com/'
+      name: 'Russell Armand',
+      image: 'assets/images/speakers/Russell Armand.jpg',
+      company: 'Ledger Enterprise',
     },
     {
-      name: 'casper',
-      image: 'assets/images/sponsors/casper.png',
-      website: 'https://casper.network/'
+      name: 'Danny Winn',
+      image: 'assets/images/speakers/Danny Winn.jpg',
+      company: 'CoinMENA',
     },
     {
-      name: 'iohk',
-      image: 'assets/images/sponsors/iohk.png',
-      website: 'https://iohk.io/'
+      name: 'Ilyas Vali',
+      image: 'assets/images/speakers/Ilyas Vali.jpg',
+      company: 'Bitget',
     },
     {
-      name: 'jpMorganChaseAndCo',
-      image: 'assets/images/sponsors/jpMorganChaseAndCo.png',
-      website: 'https://www.jpmorganchase.com/'
+      name: 'Lex Sokolin',
+      image: 'assets/images/speakers/Lex Sokolin.jpg',
+      company: 'Binance',
     },
     {
-      name: 'pqshield',
-      image: 'assets/images/sponsors/pqshield.png',
-      website: 'https://pqshield.com/'
+      name: 'Pieter Vanhove',
+      image: 'assets/images/speakers/Pieter Vanhove.jpg',
+      company: 'Fireblocks',
     },
     {
-      name: 'ibm',
-      image: 'assets/images/sponsors/ibm.png',
-      website: 'https://www.ibm.com/'
+      name: 'Fred Zhou',
+      image: 'assets/images/speakers/Fred Zhou.jpg',
+      company: 'Alserkal Group',
     },
     {
-      name: 'nttResearch',
-      image: 'assets/images/sponsors/nttResearch.png',
-      website: 'https://ntt-research.com/'
+      name: 'Victoria Scholar',
+      image: 'assets/images/speakers/Victoria Scholar.jpg',
+      company: 'Ripple',
     },
     {
-      name: 'hyperledgerFoundation',
-      image: 'assets/images/sponsors/hyperledgerFoundation.png',
-      website: 'https://www.hyperledger.org/'
-    }
+      name: 'Stephen Lindsay',
+      image: 'assets/images/speakers/Stephen Lindsay.jpg',
+      company: 'Vechain',
+    },
   ];
-  
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

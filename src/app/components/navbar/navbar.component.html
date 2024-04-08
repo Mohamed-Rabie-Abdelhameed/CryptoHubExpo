@@ -1,8 +1,11 @@
 <nav>
   <div
-    class=" flex flex-wrap items-center justify-between mx-auto md:px-12 px-2 py-4 bg-dark"
+    class="flex flex-wrap items-center justify-between mx-auto md:px-12 px-2 py-4 bg-dark"
   >
-    <a routerLink="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+    <a
+      (click)="scrollToSection('hero')"
+      class="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer"
+    >
       <img
         src="assets/images/logo.svg"
         class="hidden md:block h-10 md:h-12"
@@ -80,40 +83,31 @@
       >
         <li>
           <a
-            routerLink="/"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            (click)="toggleMenu()"
-            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out"
+            (click)="scrollToSection('about')"
+            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out cursor-pointer"
             aria-current="page"
             >About</a
           >
         </li>
         <li>
           <a
-            routerLink="/menu"
-            routerLinkActive="active"
-            (click)="toggleMenu()"
-            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out"
+            (click)="scrollToSection('topics')"
+            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out cursor-pointer"
             >Topics</a
           >
         </li>
         <li>
           <a
-            routerLink="/about"
-            routerLinkActive="active"
-            (click)="toggleMenu()"
-            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out"
+            (click)="scrollToSection('speakers')"
+            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out cursor-pointer"
           >
             Speakers
           </a>
         </li>
         <li>
           <a
-            routerLink="/contact"
-            routerLinkActive="active"
-            (click)="toggleMenu()"
-            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out"
+            (click)="scrollToSection('sponsors')"
+            class="block py-2 px-3 rounded hover:text-primary md:p-0 transition duration-300 ease-in-out cursor-pointer"
           >
             Sponsors
           </a>

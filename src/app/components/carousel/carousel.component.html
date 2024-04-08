@@ -1,1 +1,17 @@
-<p>carousel works!</p>
+<ngx-slick-carousel
+  class="carousel"
+  #slickModal="slick-carousel"
+  [config]="slideConfig"
+>
+  @for (sponsor of sponsors; track sponsor.image) {
+  <div ngxSlickItem class="slide">
+    <a href="{{ sponsor.website }}" target="_blank">
+      <img
+        src="{{ sponsor.image }}"
+        alt="{{ sponsor.name }}"
+        class="grayscale hover:grayscale-0 h-12 md:h-16 transition duration-300 ease-in-out"
+      />
+    </a>
+  </div>
+  }
+</ngx-slick-carousel>
